@@ -18,10 +18,12 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
   run:
     - python
     - cachelib >=0.9.0
-    - flask
+    - flask <3
 
 
 test:
