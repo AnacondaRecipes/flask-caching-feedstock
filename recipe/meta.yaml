@@ -36,12 +36,13 @@ test:
     - pip check
 
 about:
-  home: https://github.com/sh4nks/flask-caching
+  home: https://flask-caching.readthedocs.io/en/latest/
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
+  license_url: https://github.com/pallets-eco/flask-caching/blob/v{{ version }}/LICENSE
   summary: Adds caching support to your Flask application
-  doc_url: https://pythonhosted.org/Flask-Caching
+  doc_url: https://flask-caching.readthedocs.io/en/latest/
   dev_url: https://github.com/sh4nks/flask-caching
 
 extra:
