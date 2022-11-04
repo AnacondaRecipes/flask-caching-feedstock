@@ -28,6 +28,10 @@ test:
   imports:
     - flask_caching
     - flask_caching.backends
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/sh4nks/flask-caching
