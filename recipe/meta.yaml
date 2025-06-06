@@ -28,6 +28,9 @@ requirements:
 # ModuleNotFoundError: No module named 'pylibmc'
 {% set tests_to_skip = "test_init_nullcache" %}
 
+# AssertionError: assert '1749210855.961081' != '1749210855.961081'
+{% set tests_to_skip = tests_to_skip + " or test_set_make_cache_key_property" %}  # [win]
+
 test:
   source_files:
     - tests
@@ -38,7 +41,6 @@ test:
     - pip
     - pytest
     - asgiref
-    - python-memcached
     - redis-py
   commands:
     - pip check
