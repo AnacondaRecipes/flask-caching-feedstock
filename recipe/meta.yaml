@@ -39,7 +39,7 @@ test:
     - pytest
     - asgiref
     - python-memcached
-    - redis
+    - redis-py
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
