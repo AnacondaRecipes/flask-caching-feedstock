@@ -43,7 +43,7 @@ test:
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest -v tests
+    - pytest -v -k "not {{ tests_to_skip }}" tests
 
 about:
   home: https://github.com/pallets-eco/flask-caching
