@@ -1,12 +1,6 @@
 {% set name = "Flask-Caching" %}
 {% set version = "2.5.0" %}
-{% set tests_to_skip = "test_init_nullcache" %}
-{% set tests_to_skip = tests_to_skip + " or test_cache_timeout_dynamic" %}
-{% set tests_to_skip = tests_to_skip + " or test_set_make_cache_key_property" %}  # [win]
 
-# ModuleNotFoundError: No module named 'pylibmc'
-# AssertionError: assert '1777904960.869929' == '1777904962.0175009'
-# AssertionError: assert '1749210855.961081' != '1749210855.961081'
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -18,7 +12,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --no-cache-dir
-  skip: true  # [py<311]
+  skip: True # [py<311]
 
 requirements:
   host:
@@ -29,6 +23,13 @@ requirements:
     - python
     - cachelib >=0.17.0
     - flask >=3.0
+
+# ModuleNotFoundError: No module named 'pylibmc'
+{% set tests_to_skip = "test_init_nullcache" %}
+# AssertionError: assert '1777904960.869929' == '1777904962.0175009'
+{% set tests_to_skip = tests_to_skip + " or test_cache_timeout_dynamic" %}
+# AssertionError: assert '1749210855.961081' != '1749210855.961081'
+{% set tests_to_skip = tests_to_skip + " or test_set_make_cache_key_property" %}  # [win]
 
 test:
   source_files:
